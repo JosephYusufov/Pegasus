@@ -1,0 +1,4 @@
+Joseph Yusufov :: 2020-03-19 02:29
+Started this project. Currently working on making create_class() update the
+mongo document of teacher that is teaching the class. Stupid bug on line 39
+of /backend/classes/teacher.py. Will sort tomorrow.
