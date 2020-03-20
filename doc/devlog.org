@@ -1,5 +1,6 @@
-** Joseph Yusufov :: 2020-03-19 02:29
-**** TODO fix bug on line 39 of teacher.py
-Started this project. Currently working on making create_class() update the
-mongo document of teacher that is teaching the class. Stupid bug on line 39
-of /backend/classes/teacher.py. Will sort tomorrow.
+** Joseph Yusufov :: 2020-03-20 17:00
+**** DONE fixed bug with adding class ID to teacher doucment.
+Be careful with data types in mongo. Numbers are stored as *numbers*,
+not as strings.
+
+

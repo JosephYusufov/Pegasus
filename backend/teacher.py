@@ -35,17 +35,13 @@ def create_class(teacher_ID, class_name, class_time, class_link):
                  "teacher_ID": teacher_ID}    
     new_class = classes.insert_one(new_class) # inserting new class into collection
 
-
-    # SUPER ANNOYING BUG HERE :: 2020-03-19 02:25
-    this_teacher_query = {"ID": str(teacher_ID)} # query to find the teacher of this class
+    this_teacher_query = {"ID": teacher_ID} # query to find the teacher of this class
     this_teacher = db.teachers.find_one(this_teacher_query)
-    print("teacher")
-    pprint(this_teacher)
     
-    # this_teacher_classes = this_teacher.classes # variable to store this teachers list of classes
-    # this_teacher_classes.append(class_ID) # adding this class ID to this teacher's document
-    # class_to_append = {"$set": {"classes": this_teacher_classes}} # command to update this teachers class list
-    # teachers.update_one(this_teacher_query, class_to_append) # updating the teachers class list.
+    this_teacher_classes = this_teacher["classes"] # variable to store this teachers list of classes
+    this_teacher_classes.append(class_ID) # adding this class ID to this teacher's document
+    class_to_append = {"$set": {"classes": this_teacher_classes}} # command to update this teachers class list
+    teachers.update_one(this_teacher_query, class_to_append) # updating the teachers class list.
     
     return new_class 
 
