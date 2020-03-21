@@ -32,7 +32,8 @@ def create_class(teacher_ID, class_name, class_time, class_link):
                  "time": class_time,
                  "link": class_link,
                  "ID"  : class_ID,
-                 "teacher_ID": teacher_ID}    
+                 "teacher_ID": teacher_ID,
+                 "teacher_name": db.teachers.find_one({"ID": teacher_ID})["name"]}
     new_class = classes.insert_one(new_class) # inserting new class into collection
 
     this_teacher_query = {"ID": teacher_ID} # query to find the teacher of this class

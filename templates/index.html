@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Pegasus Lookup</title>
+  </head>
+  <body>
+    <!-- <br> -->
+    <!-- <form target="/" name="search" method="GET"> -->
+    <!--   <select id="field" name="field"> -->
+    <!--     <option value="name">Name</option> -->
+    <!--     <option value="mass">Mass</option> -->
+    <!--     <option value="year">Year</option> -->
+    <!--     <option value="coordinates">Coordinates</option> -->
+    <!--   </select> -->
+      
+    <!--   <input type="text" id="query" name="query"><br><br> -->
+    <!--   <input type="submit" value="Submit"> -->
+    <!-- </form> -->
+
+    {% if teachers %}
+    {% for member in teachers %}
+    <div>
+      <h3>{{member['name']}}    <small>ID: {{member['ID']}}</small></h3>
+      {% for class in member['classes'] %}
+      <h5>{{class['name']}} @ {{class['time']}} --> <a href="{{class['link']}}">{{class['link']}}</a></h5>
+      {% endfor %}
+      <hr/>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </body>
+</html>

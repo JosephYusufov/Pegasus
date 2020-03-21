@@ -3,4 +3,8 @@
 Be careful with data types in mongo. Numbers are stored as *numbers*,
 not as strings.
 
+** Joseph Yusufov :: 2020-03-20 22:10
+**** DONE minimal flask app working 
+Flask app allows the user to view all teachers and all classes, with a link
+to the class homepage.
 
